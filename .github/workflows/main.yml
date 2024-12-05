@@ -13,5 +13,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run backend (or specific command)
-        run: npm start  # Or replace with the correct command for your backend
+      # Removed steps related to running backend and frontend
+      # Adjust or add your own steps based on your new project setup
+      - name: Run application (example command)
+        run: npm run build  # Replace with your desired command (e.g., build or test)
