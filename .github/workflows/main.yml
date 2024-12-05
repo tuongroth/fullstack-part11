@@ -17,4 +17,3 @@ jobs:
       # Adjust or add your own steps based on your new project setup
       - name: Run application (example command)
         run: npm run build  # Replace with your desired command (e.g., build or test)
- 
