@@ -35,3 +35,4 @@ jobs:
           severity: error
           details: Build Failed!
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+
