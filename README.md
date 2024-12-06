@@ -1,6 +1,11 @@
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Related Repositories
+
+- **Legacy Code**: The legacy code for the phonebook app and related exercises can be found here: [Fullstack Part 11 - Legacy Code](https://github.com/tuongroth/fullstack-part11)
+- **Pokedex App**: You can also check out the full-stack Pokedex app here: [Pokedex Repository](https://github.com/tuongroth/full-stack-open-pokedex)
+
 
 Currently, two official plugins are available:
 
