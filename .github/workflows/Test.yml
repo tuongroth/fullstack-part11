@@ -36,3 +36,4 @@ jobs:
           details: Build Failed!
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
 
+
