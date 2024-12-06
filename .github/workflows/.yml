@@ -1,0 +1,44 @@
+name: CI/CD Pipeline for React App
+
+on:
+  push:
+    branches:
+      - master   # Trigger on push to the master branch
+  pull_request:
+    branches:
+      - master   # Trigger on pull requests to the master branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step 2: Set up Node.js (specify version if needed)
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'  # You can specify your preferred Node.js version
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Run tests (optional but recommended)
+      - name: Run tests
+        run: npm test -- --coverage
+
+      # Step 5: Build the React app
+      - name: Build React app
+        run: npm run build
+
+      # Step 6: Deploy the React app (For example, to GitHub Pages)
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: build
+          token: ${{ secrets.GITHUB_TOKEN }}  # GitHub automatically provides a token
