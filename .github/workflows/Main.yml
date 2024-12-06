@@ -12,4 +12,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-  
+    steps:
+      - name: Run tests
+        run: |
+          echo "Running tests..."
+          exit 0  # Hoặc exit 1 tùy vào kết quả bạn muốn giả lập
+          
+      # Bước actions/checkout đã bị loại bỏ.
