@@ -1,0 +1,37 @@
+name: Build and Notify
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run tests
+        run: |
+          echo "Running tests..."
+          exit 0  # Simulate success (use exit 1 for failure)
+
+      # Success Notification
+      - name: Build Success Notification
+        uses: rjstone/discord-webhook-notify@v1
+        if: success()
+        with:
+          severity: info
+          details: Build Succeeded!
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+
+      # Failure Notification
+      - name: Build Failure Notification
+        uses: rjstone/discord-webhook-notify@v1
+        if: failure()
+        with:
+          severity: error
+          details: Build Failed!
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
